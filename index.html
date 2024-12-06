@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <link rel="icon" type="image/svg+xml" href="/vite.svg" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Vite + TS</title>
+  </head>
+  <body>
+    <div id="app">
+      <div class="content">
+        <div class="switcher-container">
+          <div class="switcher-progress">1.00</div>
+          <div class="switcher">
+            <div class="switcher-button-wrapper">
+              <button
+                style="background: rgb(249, 115, 22)"
+                data-state="4"
+              ></button>
+              <p>4</p>
+            </div>
+            <div class="switcher-button-wrapper">
+              <button
+                style="background: rgb(107, 114, 128)"
+                data-state="5"
+              ></button>
+              <p>5</p>
+            </div>
+            <div class="switcher-button-wrapper">
+              <button
+                style="background: rgb(59, 130, 246)"
+                data-state="1"
+              ></button>
+              <p>1</p>
+            </div>
+            <div class="switcher-button-wrapper">
+              <button
+                style="background: rgb(34, 197, 94)"
+                data-state="2"
+              ></button>
+              <p>2</p>
+            </div>
+            <div class="switcher-button-wrapper">
+              <button
+                style="background: rgb(239, 68, 68)"
+                data-state="3"
+              ></button>
+              <p>3</p>
+            </div>
+          </div>
+        </div>
+        <div class="canvas-wrapper">
+          <canvas></canvas>
+        </div>
+      </div>
+    </div>
+    <script type="module" src="/src/main.ts"></script>
+  </body>
+</html>
