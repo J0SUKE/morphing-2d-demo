@@ -1,59 +1,76 @@
 <!DOCTYPE html>
-<html lang="en">
-  <head>
-    <meta charset="UTF-8" />
-    <link rel="icon" type="image/svg+xml" href="/vite.svg" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Vite + TS</title>
-  </head>
-  <body>
-    <div id="app">
-      <div class="content">
-        <div class="switcher-container">
-          <div class="switcher-progress">1.00</div>
-          <div class="switcher">
-            <div class="switcher-button-wrapper">
-              <button
-                style="background: rgb(249, 115, 22)"
-                data-state="4"
-              ></button>
-              <p>4</p>
-            </div>
-            <div class="switcher-button-wrapper">
-              <button
-                style="background: rgb(107, 114, 128)"
-                data-state="5"
-              ></button>
-              <p>5</p>
-            </div>
-            <div class="switcher-button-wrapper">
-              <button
-                style="background: rgb(59, 130, 246)"
-                data-state="1"
-              ></button>
-              <p>1</p>
-            </div>
-            <div class="switcher-button-wrapper">
-              <button
-                style="background: rgb(34, 197, 94)"
-                data-state="2"
-              ></button>
-              <p>2</p>
-            </div>
-            <div class="switcher-button-wrapper">
-              <button
-                style="background: rgb(239, 68, 68)"
-                data-state="3"
-              ></button>
-              <p>3</p>
+<html lang="en" class="no-js">
+	<head>
+		<meta charset="UTF-8" />
+		<meta name="viewport" content="width=device-width, initial-scale=1">
+		<title>Morphing Effect with Canvas2D | Codrops</title>
+		<meta name="author" content="Jean Mazouni for Codrops" />
+    <link rel="stylesheet" href="https://use.typekit.net/ovw5dtr.css">
+		<link rel="shortcut icon" href="./favicon.ico">
+		<script>document.documentElement.className="js";</script>
+	</head>
+  <body class="loading">
+    <main>
+      <header class="frame">
+				<h1 class="frame__title">Morphing Effect with Canvas2D <span>by <a href="https://www.jeanmazouni.com/">Jean Mazouni</a></span></h1> 
+				<nav class="frame__links">
+          <a href="https://tympanus.net/codrops/?p=83563">Tutorial</a>
+				  <a href="https://tympanus.net/codrops/demos/">All demos</a>
+				  <a href="https://github.com/J0SUKE/morphing-2d-demo">GitHub</a>
+        </nav>
+				<nav class="frame__tags">
+					<a href="https://tympanus.net/codrops/demos/?tag=morphing">#morphing</a>
+					<a href="https://tympanus.net/codrops/demos/?tag=canvas">#canvas</a>
+				</nav>
+			</header>
+      <div id="app">
+        <div class="content">
+          <div class="switcher-container">
+            <div class="switcher-progress">1.00</div>
+            <div class="switcher">
+              <div class="switcher-button-wrapper">
+                <button
+                  style="background: #D3D5D4"
+                  data-state="4"
+                ></button>
+                <p>4</p>
+              </div>
+              <div class="switcher-button-wrapper">
+                <button
+                  style="background: #A2C5AC"
+                  data-state="5"
+                ></button>
+                <p>5</p>
+              </div>
+              <div class="switcher-button-wrapper">
+                <button
+                  style="background: #9DB5B2"
+                  data-state="1"
+                ></button>
+                <p>1</p>
+              </div>
+              <div class="switcher-button-wrapper">
+                <button
+                  style="background: #878E99"
+                  data-state="2"
+                ></button>
+                <p>2</p>
+              </div>
+              <div class="switcher-button-wrapper">
+                <button
+                  style="background: #7F6A93"
+                  data-state="3"
+                ></button>
+                <p>3</p>
+              </div>
             </div>
           </div>
-        </div>
-        <div class="canvas-wrapper">
-          <canvas></canvas>
+          <div class="canvas-wrapper">
+            <canvas></canvas>
+          </div>
         </div>
       </div>
-    </div>
+    </main>
     <script type="module" src="/src/main.ts"></script>
   </body>
 </html>

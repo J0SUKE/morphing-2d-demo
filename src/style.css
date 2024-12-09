@@ -1,9 +1,188 @@
-*,
-*::before,
-*::after {
+* {
   margin: 0;
   padding: 0;
-  font-family: sans-serif;
+  box-sizing: border-box;
+
+  &::before,
+  &::after {
+    margin: 0;
+    padding: 0;
+    box-sizing: inherit;
+  }
+}
+
+:root {
+  font-size: 16px;
+  --color-text: #38383d;
+  --color-bg: #fff;
+  --color-link: #38383d;
+  --color-link-hover: #000;
+  --page-padding: 1.5rem;
+}
+
+body {
+  color: var(--color-text);
+  background-color: var(--color-bg);
+  font-family: "ivypresto-headline", serif;
+  font-weight: 300;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+
+  @media screen and (min-width: 53em) {
+    --page-padding: 2rem 3rem;
+  }
+}
+
+a {
+  text-decoration: none;
+  border-bottom: 1px solid;
+  color: var(--color-link);
+  outline: none;
+  cursor: pointer;
+  transition: all 0.3s;
+
+  &:hover {
+    text-decoration: none;
+    color: var(--color-link-hover);
+    outline: none;
+    border-bottom-color: rgba(0,0,0,0);
+  }
+
+  &:focus {
+    outline: none;
+    background: lightgrey;
+
+    &:not(:focus-visible) {
+      background: transparent;
+    }
+
+    &:focus-visible {
+      outline: 2px solid red;
+      background: transparent;
+    }
+  }
+}
+
+.js {
+  .loading {
+    &::before,
+    &::after {
+      content: '';
+      position: fixed;
+      z-index: 10000;
+    }
+
+    &::before {
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+    }
+
+    &::after {
+      top: 50%;
+      left: 50%;
+      width: 100px;
+      height: 1px;
+      margin: 0 0 0 -50px;
+      background: var(--color-link);
+      animation: loaderAnim 1.5s ease-in-out infinite alternate forwards;
+    }
+  }
+}
+
+@keyframes loaderAnim {
+  0% {
+    transform: scaleX(0);
+    transform-origin: 0% 50%;
+  }
+  50% {
+    transform: scaleX(1);
+    transform-origin: 0% 50%;
+  }
+  50.1% {
+    transform: scaleX(1);
+    transform-origin: 100% 50%;
+  }
+  100% {
+    transform: scaleX(0);
+    transform-origin: 100% 50%;
+  }
+}
+
+.frame {
+  text-align: center;
+  padding: 1rem;
+  position: relative;
+  width: 100%;
+  display: grid;
+  z-index: 1000;
+  grid-row-gap: 1rem;
+  grid-column-gap: 2rem;
+  pointer-events: none;
+  justify-items: center;
+  align-items: center;
+  grid-template-columns: 1fr;
+  grid-template-areas: 
+    "title" 
+    "links" 
+    "sponsor" 
+    "tags";
+  }
+
+  a {
+    pointer-events: auto;
+  }
+
+  .frame__title {
+    grid-area: title;
+    font-size: clamp(1rem,4vw,1.5rem);
+    font-weight: 100;
+    margin: 0;
+    & span {
+      display: block;
+      font-size: 1rem;
+    }
+  }
+
+  .frame__links {
+    grid-area: links;
+    display: flex;
+    flex-wrap: wrap;
+    gap: 1rem;
+  }
+
+  .frame__tags {
+    grid-area: tags;
+    display: flex;
+    flex-wrap: wrap;
+    gap: 1rem;
+  }
+
+  @media screen and (min-width: 53em) {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    text-align: left;
+    justify-items: start;
+    padding: var(--page-padding);
+    grid-template-columns: 1fr 1fr;
+    grid-template-rows: auto auto;
+    align-content: space-between;
+    grid-template-areas: 
+      "title links" 
+      "tags sponsor";
+
+    .frame__tags {
+      align-self: end;
+    }
+
+    .frame__links {
+      justify-self: end;
+    }
+  }
 }
 
 .content {
@@ -21,40 +200,40 @@
   justify-content: flex-end;
   gap: 24px;
   align-items: center;
-}
 
-.switcher-progress {
-  font-size: 36px;
-  font-weight: bold;
-}
+  .switcher-progress {
+    font-size: 36px;
+    font-weight: 100;
+  }
 
-.switcher {
-  display: flex;
-  align-items: center;
-  gap: 24px;
-}
+  .switcher {
+    display: flex;
+    align-items: center;
+    gap: 24px;
+  }
 
-.switcher-button-wrapper {
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  gap: 12px;
-}
+  .switcher-button-wrapper {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 12px;
 
-.switcher-button-wrapper button {
-  background: none;
-  border: none;
-  height: 48px;
-  width: 48px;
-  border-radius: 50%;
-  cursor: pointer;
+    button {
+      background: none;
+      border: none;
+      aspect-ratio: 1;
+      width: clamp(24px, 5vw, 48px);
+      border-radius: 50%;
+      cursor: pointer;
+    }
+  }
 }
 
 .canvas-wrapper {
   height: 70vh;
-}
 
-canvas {
-  height: 100%;
-  aspect-ratio: square;
+  canvas {
+    height: 100%;
+    aspect-ratio: square;
+  }
 }

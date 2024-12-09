@@ -1,4 +1,4 @@
-import "./style.css"
+import "./style.css";
 import { EventEmitter } from "events"
 
 export const imagesSequenceEmitter = new EventEmitter()
@@ -8,28 +8,28 @@ let loadedImages: HTMLImageElement[] = []
 export const loadSequenceImages = () => {
   const tr1_2 = []
   for (let i = 0; i <= 23; i++) {
-    const fileName = `/morphing/1-2/1-2${i.toString().padStart(2, "0")}.jpg`
+    const fileName = `./morphing/1-2/1-2${i.toString().padStart(2, "0")}.jpg`
     tr1_2.push(fileName)
   }
   const tr2_3 = []
   for (let i = 0; i <= 23; i++) {
-    const fileName = `/morphing/2-3/2-3${i.toString().padStart(2, "0")}.jpg`
+    const fileName = `./morphing/2-3/2-3${i.toString().padStart(2, "0")}.jpg`
     tr2_3.push(fileName)
   }
   const tr3_4 = []
   for (let i = 0; i <= 23; i++) {
-    const fileName = `/morphing/3-4/3-4${i.toString().padStart(2, "0")}.jpg`
+    const fileName = `./morphing/3-4/3-4${i.toString().padStart(2, "0")}.jpg`
     tr3_4.push(fileName)
   }
   const tr4_5 = []
   for (let i = 0; i <= 23; i++) {
-    const fileName = `/morphing/4-5/4-5${i.toString().padStart(2, "0")}.jpg`
+    const fileName = `./morphing/4-5/4-5${i.toString().padStart(2, "0")}.jpg`
     tr4_5.push(fileName)
   }
 
   const tr5_1 = []
   for (let i = 0; i <= 23; i++) {
-    const fileName = `/morphing/5-1/5-1${i.toString().padStart(2, "0")}.jpg`
+    const fileName = `./morphing/5-1/5-1${i.toString().padStart(2, "0")}.jpg`
     tr5_1.push(fileName)
   }
 
@@ -49,6 +49,10 @@ export const loadSequenceImages = () => {
   })
 }
 
+const removeLoadingClass = () => {
+  document.body.classList.remove("loading");
+};
+
 let progress = 1
 
 export const normalize = (value: number, min: number, max: number) => {
@@ -62,6 +66,7 @@ canvas.height = 720
 const ctx = canvas.getContext("2d")
 
 imagesSequenceEmitter.on("sequence-loaded", () => {
+  removeLoadingClass();
   requestAnimationFrame(render)
 })
 
