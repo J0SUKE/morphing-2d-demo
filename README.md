@@ -20,5 +20,5 @@ Follow Codrops: [Bluesky](https://bsky.app/profile/codrops.bsky.social), [Facebo
 
 ## License
 - **Code**: Licensed under the [MIT License](LICENSE).
-- **Images**: Copyright by Luma Labs. Images may not be reused, redistributed, or modified without explicit permission from Luma Labs.
+- **Images**: Copyright by Jean Mazouni and Luma AI. Images may not be reused, redistributed, or modified without explicit permission from Luma Labs.
 
