@@ -14,7 +14,7 @@ Run this demo on a [local server](https://developer.mozilla.org/en-US/docs/Learn
 
 ## Misc
 
-Follow Jean: [X](https://x.com/Jean_mazouni), [LinkedIn](https://www.linkedin.com/in/jean-mazouni-214803242/), [Instagram](https://www.instagram.com/jean_mazouni/)
+Follow Chakib : [X](https://x.com/highpfloat), [LinkedIn](https://www.linkedin.com/in/chakib-mazouni/)
 
 Follow Codrops: [Bluesky](https://bsky.app/profile/codrops.bsky.social), [Facebook](http://www.facebook.com/codrops), [GitHub](https://github.com/codrops), [Instagram](https://www.instagram.com/codropsss/), [X](http://www.x.com/codrops)
 
